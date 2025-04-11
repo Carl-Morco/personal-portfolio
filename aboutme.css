@@ -1,7 +1,10 @@
 html {
     scroll-behavior: smooth;
 }
-  
+
+html, body{
+    overflow-x: hidden;
+}
 
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(20px); }
@@ -87,9 +90,12 @@ h1 {
     font-size: 50px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 780px) {
     .contacts {
         display: none !important;
+    }
+    html, body{
+        background-attachment: fixed;
     }
 }
 
