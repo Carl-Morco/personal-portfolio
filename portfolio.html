@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <script>
+        function toggleMenu() {
+            let nav = document.querySelector(".nav-links");
+            let menuIcon = document.querySelector(".menu-icon"); 
+            nav.classList.toggle("active");
+            menuIcon.classList.toggle("active");
+        }
+        const texts = ["Student", "Developer", "Programmer", "Gamer"];
+        let count = 0;
+        let index = 0;
+        let currentText = '';
+        let letter = '';
+
+        function type() {
+            if (count === texts.length) {
+            count = 0;
+            }
+
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+
+            document.querySelector(".typing-text").textContent = letter;
+
+            if (letter.length === currentText.length) {
+            setTimeout(() => {
+                erase();
+            }, 1500);
+            } else {
+            setTimeout(type, 100);
+            }
+        }
+
+        function erase() {
+            if (index === 0) {
+            count++;
+            type();
+            return;
+            }
+
+            letter = currentText.slice(0, --index);
+            document.querySelector(".typing-text").textContent = letter;
+            setTimeout(erase, 50);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(type, 500);
+        });
+     </script>
+    <header>
+        <button class="menu-icon" aria-label="Toggle navigation" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <nav>
+            <div class="logo">
+                <img src="images/olfu.png" alt="OLFU LOGO">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="aboutme.html#portfolio">PORTFOLIO</a></li>
+                <li><a href="aboutme.html#blog">BLOG</a></li>
+                <li><a href="aboutme.html#abouts">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <section class="content">
+        <img src="/images/PHOTO.jpg" alt="My Photo" class="profile-pic">
+        <div class="intro">
+            <div class="wrapper">
+                <h1 class="static-text">I'm A <span class="typing-text"></span></h1>
+            </div>      
+                <h2 class="name">Carl Zander Morco</h2>
+                <h4 class="introduc">"Hi, I'm Carl Zander Morco, a passionate IT Student. I love creating innovative and engaging experiences through my work. Feel free to explore my projects and reach out if you'd like to collaborate!"</h4>
+                <a href="/aboutme.html" class="intro-link">VIEW MORE</a>  
+        </div>
+    </section>
+
+    <section class="contacts">
+        <ul>
+            <li><a href="mailto:camorco0234qc@student.fatima.edu.ph"><img src="/images/Gmail_icon.webp" alt="GmailLogo" width="40"></a></li>
+            <li><a href="https://x.com/xVizL4f7Nd8Gznm"><img src="/images/Xlogo" alt="TwitterLogo" width="40"></a></li>
+            <li><a href="https://www.instagram.com/carlzmorco/"><img src="/images/instagram.png" alt="InstagramLogo" width="40"></a></li>
+            <li><a href="https://www.facebook.com/carlzander.morco.1"><img src="/images/Facebook_logo.png" alt="Facebooklogo" width="40"></a></li>
+            <li><a href="https://t.me/Hinako2312"><img src="/images/Telegram_logo.svg.webp" alt="TelegramLogo" width="40"></a></li>
+            <li><a href="tel:+639636056025"><img src="/images/contact_image.png" alt="TelephoneLogo" width="43"></a></li>
+        </ul>
+    </section>
+</body>
+</html>

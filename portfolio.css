@@ -1,0 +1,336 @@
+
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    height: 100px;
+    border-radius: 50%;
+}
+
+.wrapper {
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+}
+
+.typing-text {
+    font-weight: bold;
+    color: #fc6d6d;
+  }
+
+.typing-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    color: #fc6d6d;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 110%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 50px;
+}
+
+
+.nav-links li{
+    display: inline-block;
+}
+
+.nav-links li a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover{
+    background-color: red;
+    border-radius: 5px;
+}
+
+.menu-icon{
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .content > .profile-pic {
+        margin-bottom: 6px; 
+    }
+    
+    .content > .intro {
+        margin-top: 0; 
+    }
+
+    .profile-pic {
+        width: 140px;
+        margin-bottom: 4px;
+    }
+
+    .intro h1,
+    .intro h4 {
+        margin: 0 0 6px 0;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; 
+        padding: 0;
+        background: transparent !important;
+        min-height: 150px; 
+        margin-top: 0;
+        border: none;
+        box-shadow: none !important;
+    }
+
+    .intro-link {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 15px;
+        background: linear-gradient(to left, black, #119e9e, #0089ff);
+        border-radius: 5px;
+        position: relative; 
+        left: 50%; 
+        transform: translateX(-50%);
+    }
+    .intro-link::after{
+        display: none;
+    }
+
+    .menu-icon {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .menu-icon div {
+        width: 30px;
+        height: 3px;
+        background: linear-gradient(to bottom, black, #119e9e, #0089ff);
+        transition: 0.3s;
+    }
+
+    .menu-icon.active div:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-icon.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active div:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu-icon.active {
+        transform: rotate(90deg);
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+        background: linear-gradient(to right, black, #119e9e, #0089ff);
+    }
+
+    .nav-links li a {
+        color: black; 
+        font-size: 20px; 
+        padding: 10px 0; 
+        font-family: Arial, Helvetica, sans-serif;
+        transition: background-color 0.3s ease; 
+    }
+
+    .nav-links li a:hover {
+        background-color: red; 
+        border-radius: 5px; 
+        color: black;
+    }
+
+    .contacts {
+        display: none;
+    }
+}
+
+h1{
+    font-size: 35px;
+}
+
+.intro { display: inline-block; }
+
+.name{
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-family: monospace;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(15), cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50%{border-color: transparent;}
+}
+
+@keyframes typing {
+    from {width: 0;}
+}
+
+h4{
+    font-size: 20px;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to right, black, #119e9e, #0089ff);
+    overflow-x: hidden;
+}
+
+.intro h1,
+.intro h4{
+    margin: 0 0 10px 0;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20vw;
+    padding: 50px;
+    text-align: center;
+}
+
+.profile-pic{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.intro{
+    max-width: 400px;
+    text-align: center;
+    padding: 80px;
+    border: 2px solid none;
+    border-radius: 8px;
+    background-color: #118fa1;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-height: 150px;
+}
+
+.intro-link{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(to left, black, #119e9e, #0089ff);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.intro-link::after {
+    content: " →";
+    font-weight: bold;
+    transition: margin-left 0.3s ease; 
+}
+
+.intro-link:hover::after {
+    margin-left: 5px;
+}
+
+.contacts{
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
+}
+
+.contacts ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 70px;
+}
+
+.contacts li {
+    display: inline-block;
+}
+
+.contacts ul li a img {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.contacts ul li a:hover img {
+    animation: pulse 0.5s ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
